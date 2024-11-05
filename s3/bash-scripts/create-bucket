@@ -6,4 +6,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-aws s3api create-bucket --bucket $1
+aws s3api create-bucket --bucket $1 \
+--create-bucket-configuration="LocationConstraint=eu-central-1" \
+--query Location \
+--output text
