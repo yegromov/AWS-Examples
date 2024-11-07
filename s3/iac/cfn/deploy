@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+STACK_NAME="cfn-s3-simple-yg"
+
+aws cloudformation deploy \
+--template-file template.yaml \
+--region us-west-2 \
+--no-execute-changeset \
+--stack-name $STACK_NAME
